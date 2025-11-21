@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PABAS Energy - Modular Thermochemical Conversion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="PABAS Energy develops modular thermochemical solutions to transform textile waste and biomass into clean energy, biochar, and carbon-negative value."/>
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+
+
+
+  <!-- Google Font (optional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-alt: #0b1020;
+      --bg-soft: #111827;
+      --accent: #16a34a;
+      --accent-soft: rgba(22, 163, 74, 0.16);
+      --text: #f9fafb;
+      --text-soft: #a7b0c4;
+      --border-subtle: rgba(148, 163, 184, 0.35);
+      --shadow-soft: 0 18px 50px rgba(15, 23, 42, 0.7);
+      --radius-lg: 1.5rem;
+      --radius-md: 1rem;
+      --radius-pill: 999px;
+      --max-width: 1120px;
+      --transition-fast: 180ms ease-out;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 52%, #020617 100%);
+      color: var(--text);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Layout */
+
+    .page-shell {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-wrapper,
+    .section-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding-inline: 1.5rem;
+    }
+
+    .nav-inner,
+    .section-inner {
+      width: 100%;
+      max-width: var(--max-width);
+    }
+
+    /* Nav */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(
+        to bottom,
+        rgba(2, 6, 23, 0.96),
+        rgba(2, 6, 23, 0.86),
+        rgba(2, 6, 23, 0.6)
+      );
+      border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-block: 0.9rem;
+      gap: 1.5rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .brand-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 14px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: radial-gradient(circle at 20% 0, #22c55e 0, #0f172a 46%, #020617 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .brand-text-main {
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .brand-text-sub {
+      font-size: 0.7rem;
+      color: var(--text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.17em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.86rem;
+      color: var(--text-soft);
+    }
+
+    .nav-links a {
+      padding: 0.35rem 0.4rem;
+      border-radius: 999px;
+      transition: background-color var(--transition-fast), color var(--transition-fast),
+        transform var(--transition-fast);
+    }
+
+    .nav-links a:hover {
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text);
+      transform: translateY(-1px);
+    }
+
+    .nav-cta {
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.65);
+      padding: 0.35rem 0.9rem;
+      background: radial-gradient(circle at top left, rgba(22, 163, 74, 0.2), transparent 60%);
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .nav-cta:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(22, 163, 74, 0.4);
+    }
+
+    /* Hero */
+
+    .hero {
+      padding-block: 4.5rem 3.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 2.75rem;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-radius: var(--radius-pill);
+      padding: 0.2rem 0.6rem 0.2rem 0.25rem;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: radial-gradient(circle at top left, rgba(22, 163, 74, 0.2), transparent 60%);
+      font-size: 0.72rem;
+      color: var(--text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 1.2rem;
+    }
+
+    .kicker-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0, #22c55e 0, #0f172a 55%, #020617 100%);
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 3vw, 2.7rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-title span {
+      background: linear-gradient(to right, #a5f3fc, #6ee7b7, #22c55e);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--text-soft);
+      max-width: 34rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .btn-main {
+      border-radius: var(--radius-pill);
+      border: none;
+      padding: 0.7rem 1.4rem;
+      background: linear-gradient(135deg, #15803d, #16a34a);
+      color: #020617;
+      font-weight: 600;
+      font-size: 0.92rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      box-shadow: 0 10px 24px rgba(22, 163, 74, 0.45);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .btn-main:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 32px rgba(22, 163, 74, 0.5);
+    }
+
+    .btn-main span.icon {
+      font-size: 1rem;
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+    }
+
+    .badge-card {
+      border-radius: var(--radius-md);
+      padding: 0.9rem 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: radial-gradient(circle at top left, rgba(22, 163, 74, 0.16), #020617);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      max-width: 25rem;
+    }
+
+    .badge-title {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+    }
+
+    .badge-main {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .badge-meta {
+      font-size: 0.78rem;
+      color: var(--text-soft);
+    }
+
+    /* Hero visual with image and mini badges */
+
+    .hero-visual {
+      position: relative;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background:
+        radial-gradient(circle at 0 0, rgba(34, 197, 94, 0.12), transparent 58%),
+        radial-gradient(circle at 100% 0, rgba(56, 189, 248, 0.12), transparent 58%),
+        linear-gradient(145deg, #020617, #020617 40%, #030712);
+      padding: 0.8rem;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .hero-img-wrap {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      background: #020617;
+    }
+
+    .hero-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-badges {
+      margin-top: 0.7rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      font-size: 0.75rem;
+    }
+
+    .hero-badge {
+      border-radius: 999px;
+      padding: 0.2rem 0.7rem;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text-soft);
+      backdrop-filter: blur(6px);
+    }
+
+    /* Sections */
+
+    section {
+      padding-block: 3.25rem;
+    }
+
+    .section-header {
+      margin-bottom: 1.3rem;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.76rem;
+      color: var(--text-soft);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+
+    .section-lead {
+      font-size: 0.93rem;
+      color: var(--text-soft);
+      max-width: 34rem;
+      margin-top: 0.35rem;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 1.8rem;
+      align-items: flex-start;
+    }
+
+    .card {
+      border-radius: var(--radius-lg);
+      padding: 1.3rem 1.4rem;
+      border: 1px solid var(--border-subtle);
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.92));
+      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.6);
+    }
+
+    .card-soft {
+      border-radius: var(--radius-lg);
+      padding: 1.1rem 1.3rem;
+      border: 1px dashed rgba(148, 163, 184, 0.55);
+      background: rgba(15, 23, 42, 0.75);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.8rem;
+      font-size: 1.05rem;
+    }
+
+    .card p,
+    .card-soft p {
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+      font-size: 0.93rem;
+      color: var(--text-soft);
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+    }
+
+    .pill {
+      border-radius: 999px;
+      padding: 0.2rem 0.7rem;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text-soft);
+    }
+
+    ul.clean {
+      list-style: none;
+      padding: 0;
+      margin: 0.4rem 0 0;
+      font-size: 0.9rem;
+      color: var(--text-soft);
+    }
+
+    ul.clean li {
+      margin-bottom: 0.3rem;
+      display: flex;
+      gap: 0.45rem;
+    }
+
+    ul.clean li::before {
+      content: "•";
+      color: var(--accent);
+      margin-top: 0.05rem;
+    }
+
+    /* Applications */
+
+    .columns-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .mini-heading {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin-bottom: 0.35rem;
+    }
+
+    /* About and partners */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1.6rem;
+      align-items: stretch;
+    }
+
+    .tagline {
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-top: 0.4rem;
+    }
+
+    /* Contact */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      gap: 1.7rem;
+      align-items: flex-start;
+    }
+
+    form {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 0.85rem;
+    }
+
+    label {
+      color: var(--text-soft);
+    }
+
+    input,
+    textarea {
+      border-radius: 0.8rem;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(15, 23, 42, 0.9);
+      padding: 0.6rem 0.75rem;
+      font-size: 0.9rem;
+      color: var(--text);
+      font-family: inherit;
+      resize: vertical;
+      min-height: 2.6rem;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(22, 163, 74, 0.55);
+    }
+
+    textarea {
+      min-height: 120px;
+    }
+
+    .helper {
+      font-size: 0.75rem;
+      color: var(--text-soft);
+    }
+
+    .btn-submit {
+      margin-top: 0.4rem;
+      border-radius: var(--radius-pill);
+      border: none;
+      padding: 0.7rem 1.4rem;
+      background: linear-gradient(135deg, #15803d, #16a34a);
+      color: #020617;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      justify-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 10px 24px rgba(22, 163, 74, 0.5);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 32px rgba(22, 163, 74, 0.55);
+    }
+
+    /* Footer */
+
+    footer {
+      padding: 1.7rem 1.5rem 1.9rem;
+      border-top: 1px solid rgba(51, 65, 85, 0.7);
+      background: radial-gradient(circle at top, #020617 0, #020617 60%, #020617 100%);
+      display: flex;
+      justify-content: center;
+    }
+
+    .footer-inner {
+      width: 100%;
+      max-width: var(--max-width);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.6rem;
+      font-size: 0.78rem;
+      color: var(--text-soft);
+    }
+
+    .footer-inner a {
+      color: var(--accent);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .content-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding-block: 3.4rem 2.6rem;
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .section-wrapper {
+        padding-inline: 1.25rem;
+      }
+
+      .columns-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-inner {
+        padding-block: 0.7rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 3.1rem;
+      }
+
+      .card,
+      .card-soft {
+        padding: 1rem 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-shell">
+
+    <!-- NAVBAR -->
+    <header>
+      <div class="nav-wrapper">
+        <div class="nav-inner">
+          <div class="brand">
+            <div class="brand-logo">
+              <!-- Replace with your real logo -->
+              <!-- <img src="assets/logo-pabas.svg" alt="PABAS Energy logo" /> -->
+            </div>
+            <div>
+              <div class="brand-text-main">PABAS Energy</div>
+              <div class="brand-text-sub">Textile and Biomass to Energy</div>
+            </div>
+          </div>
+
+          <nav class="nav-links">
+            <a href="#problem">Problem</a>
+            <a href="#solution">Solution</a>
+            <a href="#technology">Technology</a>
+            <a href="#applications">Applications</a>
+            <a href="#about">About</a>
+            <a href="#contact" class="nav-cta">Contact us</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- HERO -->
+      <section class="section-wrapper hero" id="top">
+        <div class="section-inner hero-grid">
+          <div>
+            <div class="hero-kicker">
+              <div class="kicker-dot"></div>
+              <span>Modular climate tech concept</span>
+            </div>
+
+            <h1 class="hero-title">
+              Modular thermochemical conversion for
+              <span>textile waste and biomass</span>.
+            </h1>
+
+            <p class="hero-subtitle">
+              PABAS Energy enables co valorization of mixed textile waste and residual biomass through
+              advanced pyrolysis and gasification, generating renewable syngas, high quality biochar,
+              and verifiable carbon credits close to where waste is produced.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#contact" class="btn-main">
+                <span>Get in touch</span>
+                <span class="icon">↗</span>
+              </a>
+              <div class="hero-note">
+                EU based. Early stage. Open to pilots and partnerships.
+              </div>
+            </div>
+
+            <div class="badge-card">
+              <div class="badge-title">Recognition</div>
+              <div class="badge-main">
+                Selected by Miticoro Foundation (2025) through the Cleantech Academy program.
+              </div>
+              <div class="badge-meta">
+                Climate innovation challenge focused on high impact, scalable solutions.
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-img-wrap">
+              <!-- Replace with your real hero image -->
+              <img src="assets/hero-plant.jpg" alt="Illustration of a modular plant converting textile waste and biomass." />
+            </div>
+            <div class="hero-badges">
+              <div class="hero-badge">Textile and biomass co valorization</div>
+              <div class="hero-badge">Modular thermochemical concept</div>
+              <div class="hero-badge">EU focused</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROBLEM -->
+      <section class="section-wrapper" id="problem">
+        <div class="section-inner">
+          <div class="section-header">
+            <div class="eyebrow">Problem</div>
+            <h2 class="section-title">Two converging waste challenges</h2>
+            <p class="section-lead">
+              Fast fashion and agriculture generate growing waste streams across Europe. Most of this
+              material is still treated as an end of life problem instead of a resource.
+            </p>
+          </div>
+
+          <div class="content-grid">
+            <div class="card">
+              <h3>Textile waste that resists recycling</h3>
+              <p>
+                Mixed fiber textiles, dyed fabrics, and garments with complex blends are difficult or
+                impossible to process with conventional mechanical recycling. As a result, a large share
+                ends up in landfills or incineration plants, driving emissions and costs.
+              </p>
+              <h3 style="margin-top: 1.1rem;">Underused biomass residues</h3>
+              <p>
+                At the same time, agriculture and forestry generate significant residual biomass. Much of
+                it is burned openly or left unused, missing an opportunity to create local energy and
+                carbon storage.
+              </p>
+              <p>
+                These two waste flows share the same story: transport intensive, carbon intensive, and
+                structurally under valorized.
+              </p>
+            </div>
+
+            <div class="card-soft">
+              <p>
+                We see this not only as a waste and emissions problem, but as a design problem. How can
+                one modular system process both textiles and biomass, close to their source, while
+                generating economic value and measurable climate impact.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOLUTION -->
+      <section class="section-wrapper" id="solution">
+        <div class="section-inner">
+          <div class="section-header">
+            <div class="eyebrow">Solution</div>
+            <h2 class="section-title">Co valorization through modular thermochemical systems</h2>
+            <p class="section-lead">
+              PABAS Energy designs modular plants that co process textile waste and biomass using proven
+              thermochemical routes such as pyrolysis and gasification.
+            </p>
+          </div>
+
+          <div class="content-grid">
+            <div class="card">
+              <h3>What we enable</h3>
+              <ul class="clean">
+                <li>Syngas and renewable heat for local industrial users or district heating.</li>
+                <li>Bio oil or biomethane, depending on configuration and local demand.</li>
+                <li>High quality biochar suitable for soil, materials, or water treatment applications.</li>
+                <li>Carbon credits derived from long term carbon storage in biochar and avoided emissions.</li>
+              </ul>
+
+              <p style="margin-top: 0.8rem;">
+                Units are designed to be scalable and modular, with a capacity that can match local waste
+                flows and energy needs.
+              </p>
+            </div>
+
+            <div class="card-soft">
+              <h3 style="margin-top: 0;">How it works in practice</h3>
+              <p>
+                Instead of moving waste over long distances to centralized plants, PABAS plants are
+                located near collection hubs. This reduces transport emissions, simplifies logistics, and
+                allows energy and by products to stay inside the local ecosystem.
+              </p>
+              <div class="pill-list">
+                <div class="pill">Local deployment</div>
+                <div class="pill">Feedstock flexibility</div>
+                <div class="pill">Energy and carbon value</div>
+                <div class="pill">Circular outcomes</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY IT MATTERS + TECHNOLOGY -->
+      <section class="section-wrapper" id="technology">
+        <div class="section-inner">
+          <div class="section-header">
+            <div class="eyebrow">Impact and technology</div>
+            <h2 class="section-title">Why it matters and what sits under the hood</h2>
+          </div>
+
+          <div class="content-grid">
+            <div class="card">
+              <h3>Why it matters</h3>
+              <p>
+                PABAS Energy aims to reduce landfill dependence, cut emissions, and unlock local economic
+                value from materials usually considered a liability. By integrating textile waste and
+                biomass, we can:
+              </p>
+              <ul class="clean">
+                <li>Lower the amount of textiles and residues sent to landfills or incinerators.</li>
+                <li>Replace a portion of fossil based heat and fuels with local renewable outputs.</li>
+                <li>Generate durable carbon storage through biochar.</li>
+                <li>Support municipal strategies for circularity and climate commitments.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3>Technology snapshot</h3>
+              <p>
+                PABAS Energy is an early stage concept grounded in well known thermochemical technologies.
+                Our work focuses on integrating them into a flexible architecture tailored to textiles and
+                biomass.
+              </p>
+              <ul class="clean">
+                <li>Core routes: pyrolysis and gasification, with optional HTL and oxyfuel steps.</li>
+                <li>Target configuration: modular units that can be deployed near collection centers.</li>
+                <li>
+                  Current focus: feedstock characterization, process coupling, LCA modelling, and
+                  techno economic assessment.
+                </li>
+              </ul>
+              <p style="margin-top: 0.6rem;">
+                Underlying processes have high technology readiness in industrial contexts. The
+                innovation lies in configuration, feedstock strategy, and integration with local partners.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- APPLICATIONS -->
+      <section class="section-wrapper" id="applications">
+        <div class="section-inner">
+          <div class="section-header">
+            <div class="eyebrow">Applications</div>
+            <h2 class="section-title">Who PABAS Energy is built for</h2>
+            <p class="section-lead">
+              We are designing our system for organizations that manage complex waste streams or are
+              searching for carbon negative, circular energy options.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="columns-2">
+              <div>
+                <div class="mini-heading">Primary partners</div>
+                <ul class="clean">
+                  <li>Municipal and regional waste authorities looking for new options for textiles.</li>
+                  <li>Textile consortia and fashion brands with strong ESG roadmaps.</li>
+                  <li>Energy utilities interested in local circular feedstocks.</li>
+                </ul>
+              </div>
+              <div>
+                <div class="mini-heading">Downstream users</div>
+                <ul class="clean">
+                  <li>Industrial heat users near waste collection hubs.</li>
+                  <li>Agricultural districts with interest in biochar and soil health.</li>
+                  <li>Actors in carbon markets and climate finance.</li>
+                </ul>
+              </div>
+            </div>
+            <p style="margin-top: 0.9rem; font-size: 0.9rem; color: var(--text-soft);">
+              Our goal is to co design pilots where waste flows, energy uses, and carbon outcomes are
+              aligned and measurable from day one.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT AND LOOKING FOR -->
+      <section class="section-wrapper" id="about">
+        <div class="section-inner">
+          <div class="section-header">
+            <div class="eyebrow">Team and collaborations</div>
+            <h2 class="section-title">A multidisciplinary team looking for the right partners</h2>
+          </div>
+
+          <div class="about-grid">
+            <div class="card">
+              <h3>About PABAS Energy</h3>
+              <p>
+                PABAS Energy was born inside the Cleantech Academy, a program supported by the Miticoro
+                Foundation. We are a multidisciplinary team eager to go to the real world.
+              </p>
+              <p class="tagline">
+                We are united by a simple mission:
+                <strong>turn two waste problems into one regenerative solution.</strong>
+              </p>
+              <p>
+                We work at the intersection of technical feasibility and real world constraints. Our
+                priority is to validate the concept with partners who understand both the complexity of
+                waste streams and the urgency of climate action.
+              </p>
+            </div>
+
+            <div class="card-soft">
+              <h3>What we are looking for</h3>
+              <ul class="clean">
+                <li>Municipalities or consortia open to explore a textiles and biomass pilot.</li>
+                <li>Technical partners for feedstock testing, process design, and modelling.</li>
+                <li>Research labs and universities with expertise in thermochemical processes or biochar.</li>
+                <li>Climate and impact investors interested in very early stage concepts.</li>
+              </ul>
+              <p style="margin-top: 0.7rem; font-size: 0.88rem; color: var(--text-soft);">
+                If you recognize these challenges in your territory or portfolio, we would be glad to
+                discuss how PABAS Energy can fit into your roadmap.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section-wrapper" id="contact">
+        <div class="section-inner">
+          <div class="section-header">
+            <div class="eyebrow">Contact</div>
+            <h2 class="section-title">Start a conversation with us</h2>
+            <p class="section-lead">
+              We are currently mapping opportunities and potential pilot sites in the European Union. If
+              you see a fit, reach out and we will get back to you within 48 hours.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="card">
+             <form action="https://formsubmit.co/pabasenergy@gmail.com" method="POST">
+  
+  <!-- Nome -->
+  <div class="field-group">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder="Your name" required>
+  </div>
+
+  <!-- Email -->
+  <div class="field-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+  </div>
+
+  <!-- Organization -->
+  <div class="field-group">
+    <label for="org">Organization (optional)</label>
+    <input type="text" id="org" name="organization" placeholder="Company, municipality, lab...">
+  </div>
+
+  <!-- Message -->
+  <div class="field-group">
+    <label for="message">How would you like to collaborate</label>
+    <textarea id="message" name="message" placeholder="Share a short description of your idea, pilot, or question." required></textarea>
+  </div>
+
+  <!-- Hidden FormSubmit Settings -->
+  <input type="hidden" name="_subject" value="New contact request from PABAS Energy Landing Page">
+  <input type="hidden" name="_template" value="box">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_autoresponse" value="Thank you for contacting PABAS Energy. We received your message and will respond soon.">
+  
+  <!-- Redirect after success (change if needed) -->
+  <input type="hidden" name="_next" value="https://pabasenergy.com/thank-you.html">
+  
+  <!-- Honeypot anti-bot -->
+  <input type="text" name="_honey" style="display:none">
+
+  <!-- Submit Button -->
+  <button type="submit" class="btn-submit">
+    <span>Send message</span>
+    <span>↗</span>
+  </button>
+
+  <div class="helper">
+    Contact us at
+    <strong>pabasenergy@gmail.com</strong>
+  </div>
+</form>
+
+            </div>
+
+            <div class="card-soft">
+              <h3>What to include in your message</h3>
+              <ul class="clean">
+                <li>Where you are based and what type of waste or biomass you work with.</li>
+                <li>If you already manage textile waste, biomass, or both.</li>
+                <li>Your main interest: energy, biochar, carbon credits, or a combination.</li>
+              </ul>
+              <p style="margin-top: 0.6rem; font-size: 0.88rem; color: var(--text-soft);">
+                The more context you can share from the beginning, the faster we can understand if a
+                pilot or collaboration could be realistic in your case.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div>
+          ©
+          <span id="year"></span>
+          PABAS Energy. All rights reserved.
+        </div>
+        <div>
+          Email:
+          <strong>pabasenergy@gmail.com</strong>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
